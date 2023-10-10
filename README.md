@@ -66,7 +66,7 @@ https://github.com/aublwill/C323.p6.Notes/assets/143005409/4d5239d6-a649-4483-81
 
 
 ## Notes
-* Sometimes crashes
+* Everything should work as intended
 
 ## License
 Copyright [2023] [Aubrey Williams]
