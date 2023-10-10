@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.widget.ExpandableListView.OnChildClickListener
 import androidx.fragment.app.DialogFragment
 
 class ConfirmDeleteDialogFragment(val noteId:Long, val clickListener: (noteId:Long)-> Unit):DialogFragment() {
