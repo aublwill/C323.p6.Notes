@@ -15,11 +15,13 @@ class NotesFragment :Fragment(){
     val TAG = "NotesFragment"
     private var _binding:FragmentNotesBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //variables
         _binding = FragmentNotesBinding.inflate(inflater, container, false)
         val view = binding.root
         val application = requireNotNull(this.activity).application
@@ -30,26 +32,32 @@ class NotesFragment :Fragment(){
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        //access variable to access clicked note
         fun notesClicked(noteId:Long){
             viewModel.onNoteClicked(noteId)
         }
+        //delete note if "yes" is pressed from dialog
         fun yesPressed(noteId:Long){
             Log.d(TAG, "in yesPressed(): noteId = $noteId")
             viewModel.deleteById(noteId)
         }
+        //show dialog when delete button is clicked
         fun deleteClicked(noteId:Long){
             ConfirmDeleteDialogFragment(noteId, ::yesPressed).show(childFragmentManager,
                 ConfirmDeleteDialogFragment.TAG)
         }
 
+        //adapter
         val adapter = NoteItemAdapter(::notesClicked, ::deleteClicked)
         binding.RecycleV.adapter = adapter
 
+        //observe notes
         viewModel.notes.observe(viewLifecycleOwner, Observer{
             it?.let{
                 adapter.submitList(it)
             }
         })
+        //navigate to clicked note
         viewModel.navigateToNote.observe(viewLifecycleOwner, Observer { noteId->
             noteId?.let{
                 val action = NotesFragmentDirections

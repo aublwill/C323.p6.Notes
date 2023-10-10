@@ -8,6 +8,8 @@ import androidx.room.RoomDatabase
 @Database(entities = [Note::class], version = 1, exportSchema = false)
 abstract class NoteDatabase : RoomDatabase(){
     abstract val noteDao:NoteDao
+
+    //obtain database
     companion object{
         @Volatile
         private var INSTANCE: NoteDatabase? = null

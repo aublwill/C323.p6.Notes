@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import com.example.c323p6notes.databinding.FragmentEditNoteBinding
 
 class EditNoteFragment : Fragment(){
+    //binding variables
     private var _binding: FragmentEditNoteBinding? = null
     private val binding get() = _binding!!
 
@@ -19,6 +20,7 @@ class EditNoteFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //access/assign variables
         _binding = FragmentEditNoteBinding.inflate(inflater, container, false)
         val view = binding.root
         val noteId = EditNoteFragmentArgs.fromBundle(requireArguments()).noteId
@@ -31,6 +33,7 @@ class EditNoteFragment : Fragment(){
             .get(EditNoteViewModel::class.java)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
+        //navigate back to notesFragment (home screen with all the notes)
         viewModel.navigateToList.observe(viewLifecycleOwner, Observer {navigate ->
             if (navigate){
                 view.findNavController()

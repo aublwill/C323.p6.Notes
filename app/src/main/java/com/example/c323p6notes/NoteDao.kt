@@ -9,6 +9,7 @@ import androidx.room.Update
 
 @Dao
 interface NoteDao {
+    //interface for methods/database operations
     @Insert
     suspend fun insert(note: Note)
     @Update

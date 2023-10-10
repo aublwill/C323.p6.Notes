@@ -10,6 +10,7 @@ class NoteItemAdapter (val clickListener : (noteId:Long) -> Unit,
     val deleteClickListener: (noteId:Long) -> Unit)
     :ListAdapter<Note, NoteItemAdapter.NoteItemViewHolder>(NoteDiffItemCallback()){
 
+    //inflate layout, bind data
     override fun onCreateViewHolder(parent: ViewGroup, viewType:Int)
         :NoteItemViewHolder = NoteItemViewHolder.inflateFrom(parent)
     override fun onBindViewHolder(holder:NoteItemViewHolder, position:Int){
@@ -17,6 +18,7 @@ class NoteItemAdapter (val clickListener : (noteId:Long) -> Unit,
         holder.bind(item, clickListener, deleteClickListener)
     }
 
+    //bind data to items in RecyclerView
     class NoteItemViewHolder(val binding: NoteItemBinding)
         :RecyclerView.ViewHolder(binding.root){
 

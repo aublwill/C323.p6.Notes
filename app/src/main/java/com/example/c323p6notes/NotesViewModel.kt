@@ -7,11 +7,15 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class NotesViewModel(val dao: NoteDao): ViewModel() {
+    //variables
     var newNoteName = ""
     val notes = dao.getAll()
     private val _navigateToNote = MutableLiveData<Long?>()
     val navigateToNote: LiveData<Long?>
         get() = _navigateToNote
+    /*
+    adds new note to database and view
+     */
     fun addNote(){
         viewModelScope.launch{
             val note = Note()
@@ -19,6 +23,7 @@ class NotesViewModel(val dao: NoteDao): ViewModel() {
             dao.insert(note)
         }
     }
+    //deletes note from database and view
     fun deleteById(noteId: Long){
         viewModelScope.launch {
             val note = Note()
@@ -27,9 +32,11 @@ class NotesViewModel(val dao: NoteDao): ViewModel() {
         }
     }
 
+    //navigate to selected note
     fun onNoteClicked(noteId: Long){
         _navigateToNote.value = noteId
     }
+    //after navigation, reset variable
     fun onNoteNavigated(){
         _navigateToNote.value = null
     }

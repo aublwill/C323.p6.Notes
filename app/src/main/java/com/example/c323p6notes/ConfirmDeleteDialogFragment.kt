@@ -13,17 +13,29 @@ class ConfirmDeleteDialogFragment(val noteId:Long, val clickListener: (noteId:Lo
         fun yesPressed()
     }
     var listener: myClickListener? = null
+
+    /*
+    method that creates the confirmation dialog to delete the note
+    @param savedInstanceState: Bundle
+    @returns created dialog
+     */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
         AlertDialog.Builder(requireContext())
             .setMessage("Are you sure you want to delete?")
+            //yes delete
             .setPositiveButton("Yes"){_,_->clickListener(noteId)}
+                //no delete
             .setNegativeButton("No"){_,_->}
-
+            //create dialog
             .create()
     companion object{
         const val TAG = "ConfirmDeleteDialogFragment"
     }
 
+    /*
+    method to attach listener
+    @param context: Context
+     */
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
