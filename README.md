@@ -15,43 +15,43 @@ The following **required** functionality is completed:
 
 The folowing **extensions** are implemented:
 
-import android.app.AlertDialog
-import android.app.Dialog
-import android.content.Context
-import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.DialogFragment
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import com.example.c323p6notes.databinding.FragmentEditNoteBinding
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
-import java.lang.IllegalArgumentException
-import androidx.appcompat.app.AppCompatActivity
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.example.c323p6notes.databinding.NoteItemBinding
+* import android.app.AlertDialog
+* import android.app.Dialog
+* import android.content.Context
+* import android.os.Bundle
+* import android.util.Log
+* import androidx.fragment.app.DialogFragment
+* import android.os.Bundle
+* import android.view.LayoutInflater
+* import android.view.View
+* import android.view.ViewGroup
+* import androidx.fragment.app.Fragment
+* import androidx.lifecycle.Observer
+* import androidx.lifecycle.ViewModelProvider
+* import androidx.navigation.findNavController
+* import com.example.c323p6notes.databinding.FragmentEditNoteBinding
+* import androidx.lifecycle.LiveData
+* import androidx.lifecycle.MutableLiveData
+* import androidx.lifecycle.ViewModel
+* import androidx.lifecycle.viewModelScope
+* import kotlinx.coroutines.launch
+* import java.lang.IllegalArgumentException
+* import androidx.appcompat.app.AppCompatActivity
+* import androidx.room.ColumnInfo
+* import androidx.room.Entity
+* import androidx.room.PrimaryKey
+* import androidx.room.Dao
+* import androidx.room.Delete
+* import androidx.room.Insert
+* import androidx.room.Query
+* import androidx.room.Update
+* import androidx.room.Database
+* import androidx.room.Room
+* import androidx.room.RoomDatabase
+* import androidx.recyclerview.widget.DiffUtil
+* import androidx.recyclerview.widget.ListAdapter
+* import androidx.recyclerview.widget.RecyclerView
+* import com.example.c323p6notes.databinding.NoteItemBinding
   
 ## Video Walkthrough 
 
