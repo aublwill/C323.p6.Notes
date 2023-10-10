@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NotesFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.c323p6notes.NotesViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:id="@+id/RecycleV"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:id="@+id/bAddNote"
+            android:text="ADD NOTE"
+            android:onClick="@{() -> viewModel.addNote()}">
+        </Button>
+
+
+    </LinearLayout>
+</layout>
