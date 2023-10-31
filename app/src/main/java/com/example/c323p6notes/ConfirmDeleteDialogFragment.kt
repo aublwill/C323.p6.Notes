@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.DialogFragment
 
-class ConfirmDeleteDialogFragment(val noteId:Long, val clickListener: (noteId:Long)-> Unit):DialogFragment() {
+class ConfirmDeleteDialogFragment(val noteId:String, val clickListener: (noteId:String)-> Unit):DialogFragment() {
     val TAG = "ConfirmDeleteDialogFragment"
     interface myClickListener{
         fun yesPressed()

@@ -2,18 +2,49 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".EditTaskFragment">
+    tools:context=".EditNoteFragment">
     <data>
         <variable
             name="viewModel"
-            type="com.example.c323p6notes.EditNoteViewModel" />
+            type="com.example.c323p6notes.NotesViewModel" />
     </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="10dp">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:background="#5BBFA3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:gravity="center"
+                android:text="@={viewModel.note.noteName}"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:onClick="@{()->viewModel.signOut()}"
+                android:src="@drawable/user_img"
+                android:backgroundTint="#5BBFA3" />
+
+            <ImageButton
+                android:id="@+id/bDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:src="@android:drawable/ic_delete"
+                android:backgroundTint="#5BBFA3"
+                android:clickable="true"/>
+        </androidx.appcompat.widget.Toolbar>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -35,8 +66,12 @@
             android:layout_height="0dp"
             android:layout_weight=".1"
             android:id="@+id/bSave"
-            android:onClick="@{() -> viewModel.saveNote()}"
-            android:text="SAVE"/>
+            android:onClick="@{() -> viewModel.updateNote()}"
+            android:text="SAVE"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:backgroundTint="#5BBFA3"/>
     </LinearLayout>
 
 </layout>
