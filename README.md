@@ -1,17 +1,20 @@
 Collaboration with Kuzey Bektas
 
-# C323.p6.Notes
+# C323.p7.Notes
 This project functions as a notes app.
 
 ## Functionality 
 The following **required** functionality is completed:
-* [] user sees a screen with (maybe) notes on it
+* [] user sees a screen with (maybe) notes on it or a sign-in/sign-up screen
+* [] if user is not signed in, they can either sign in using email or password or sign up with email and password
+* [] once signed in, user can see their existing notes
+* [] on this screen, user can add note(note with '+' button), or sign-out(person button) within the top toolbar
+* [] user can see each note title along with their contents
 * [] user can either press on an existing note to edit/view it
-* [] or user can press "Add Note" to create a new note
-* [] user can then press on the new note to name and edit the contents
 * [] user can press save to save the note and naviagte back to home screen
-* [] user can press the red "X" on a note for a confirmation to pop up
+* [] user can press the red "X" within a note for a confirmation to pop up
 * [] if user presses "no", nothing happens, if user presses "yes", the selected note will be deleted
+* [] each user has their own private set of notes
 
 The folowing **extensions** are implemented:
 
@@ -38,31 +41,34 @@ The folowing **extensions** are implemented:
 * import java.lang.IllegalArgumentException
 * import androidx.appcompat.app.AppCompatActivity
 * import androidx.room.ColumnInfo
-* import androidx.room.Entity
-* import androidx.room.PrimaryKey
-* import androidx.room.Dao
-* import androidx.room.Delete
-* import androidx.room.Insert
-* import androidx.room.Query
-* import androidx.room.Update
-* import androidx.room.Database
-* import androidx.room.Room
-* import androidx.room.RoomDatabase
 * import androidx.recyclerview.widget.DiffUtil
 * import androidx.recyclerview.widget.ListAdapter
 * import androidx.recyclerview.widget.RecyclerView
 * import com.example.c323p6notes.databinding.NoteItemBinding
+* import com.google.firebase.auth.FirebaseAuth
+* import com.google.firebase.auth.FirebaseUser
+* import com.google.firebase.auth.ktx.auth
+* import com.google.firebase.database.DataSnapshot
+* import com.google.firebase.database.DatabaseError
+* import com.google.firebase.database.DatabaseReference
+* import com.google.firebase.database.ValueEventListener
+* import com.google.firebase.database.ktx.getValue
+* import com.google.firebase.database.ktx.database
+* import com.google.firebase.ktx.Firebase
+* import com.google.firebase.database.Exclude
   
 ## Video Walkthrough 
 
 
 
-https://github.com/aublwill/C323.p4.Translator/assets/143005409/a19ba106-04c1-4917-be9d-9aab867180d1
+
+https://github.com/aublwill/C323.p6.Notes/assets/143005409/2ed6a119-cfcd-41f7-bd95-e115b0e6448f
+
 
 
 
 ## Notes
-* Sometimes crashes
+* Should work as intended
 
 ## License
 Copyright [2023] [Aubrey Williams]
